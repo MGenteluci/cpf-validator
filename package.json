@@ -1,0 +1,25 @@
+{
+  "name": "cpf-validator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "prepublish": "npm test",
+    "coverage": "jest --coverage"
+  },
+  "keywords": [
+    "cpf",
+    "validator",
+    "brazil"
+  ],
+  "author": "Matheus Genteluci",
+  "license": "MIT",
+  "description": "package for cpf validation",
+  "devDependencies": {
+    "jest": "^23.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MGenteluci/cpf-validator.git"
+  }
+}
