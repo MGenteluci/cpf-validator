@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "prepublish": "npm test",
+    "prepublishOnly": "npm test",
     "coverage": "jest --coverage"
   },
   "keywords": [
@@ -16,7 +16,7 @@
   "license": "MIT",
   "description": "package for cpf validation",
   "devDependencies": {
-    "jest": "^23.6.0"
+    "jest": "^24.1.0"
   },
   "repository": {
     "type": "git",
