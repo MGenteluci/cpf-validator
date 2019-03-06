@@ -4,6 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
+    "lint": "eslint **/*.js",
     "prepublishOnly": "npm test",
     "coverage": "jest --coverage"
   },
@@ -16,6 +17,7 @@
   "license": "MIT",
   "description": "package for cpf validation",
   "devDependencies": {
+    "eslint": "^5.15.1",
     "jest": "^24.1.0"
   },
   "repository": {

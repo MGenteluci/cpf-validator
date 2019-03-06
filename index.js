@@ -15,8 +15,8 @@ const isLengthValid = cpf => cpf.length === 11;
 const isFirstDigitValid = (firstNineDigits, firstVerifierDigit) => {
   let sum = 0;
 
-  for (let i = 0; i < firstNineDigits.length; i++) {
-    sum += firstNineDigits[i] * (10 - i);
+  for (let idx = 0; idx < firstNineDigits.length; idx++) {
+    sum += firstNineDigits[idx] * (10 - idx);
   }
 
   let rest = (sum * 10) % 11;
@@ -28,15 +28,15 @@ const isFirstDigitValid = (firstNineDigits, firstVerifierDigit) => {
 const isSecondDigitValid = (firstTenDigits, secondVerifierDigit) => {
   let sum = 0;
 
-  for (let i = 0; i < firstTenDigits.length; i++) {
-    sum += firstTenDigits[i] * (11 - i);
+  for (let idx = 0; idx < firstTenDigits.length; idx++) {
+    sum += firstTenDigits[idx] * (11 - idx);
   }
 
   let rest = (sum * 10) % 11;
   if (rest === 10) rest = 0;
 
   return rest == secondVerifierDigit;
-}
+};
 
 const isValid = cpf => {
   const cpfFormatted = cpf.replace(/\D/g, '');
@@ -44,15 +44,15 @@ const isValid = cpf => {
   if (!isLengthValid(cpfFormatted)) return false;
 
   if (BLACK_LIST.includes(cpfFormatted)) return false;
-  
+
   const firstNineDigits = cpfFormatted.substring(0, 9);
   const firstVerifierDigit = cpfFormatted.substring(9, 10);
 
-  if(!isFirstDigitValid(firstNineDigits, firstVerifierDigit)) return false;
+  if (!isFirstDigitValid(firstNineDigits, firstVerifierDigit)) return false;
 
   const firstTenDigits = cpfFormatted.substring(0, 10);
   const secondVerifierDigit = cpfFormatted.substring(10, 11);
-  if(!isSecondDigitValid(firstTenDigits, secondVerifierDigit)) return false;
+  if (!isSecondDigitValid(firstTenDigits, secondVerifierDigit)) return false;
 
   return true;
 };
